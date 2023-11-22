@@ -1,0 +1,17 @@
+{
+    "name": "app/framework-mvc",
+    "authors": [
+        {
+            "name": "Bruno Pierri",
+            "email": "pierri95@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Core\\": "core/",
+            "Config\\": "config/"
+        }
+    }
+}
