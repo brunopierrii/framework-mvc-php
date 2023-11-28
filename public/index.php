@@ -1,9 +1,11 @@
 <?php
 
-use Core\RouterCore;
+use Config\Router;
 
 require_once dirname(__DIR__).'/vendor/autoload.php';
 require_once dirname(__DIR__).'/resources/functions/dump.php';
 
-(new RouterCore());
+$router = new Router();
+
+
 
