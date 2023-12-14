@@ -70,17 +70,23 @@ abstract class RouterCore
 
     private function execute()
     {
+        $routeNotExists = true;
         foreach ($this->getRoutes() as $route) {
+
+            $path = substr($route['path'], 1);
+
+            if($path != $this->uri){
+                continue;
+            }
+            
             if ($this->method !== $route['method']) {
                 
                 header('HTTP/1.1 405 Method Not Allowed');
-                header('Allow: ' . $route['method']);
+                header("Access-Control-Allow-Methods: {$route['method']}");
                 echo 'Erro 405: Método HTTP incorreto. Use ' . $route['method'];
 
                 return;
             }
-
-            $path = substr($route['path'], 1);
 
             if(substr($path, -1) == '/') {
                 $path = substr($path, 0, -1);
@@ -88,11 +94,14 @@ abstract class RouterCore
 
             if($path == $this->uri) {
                 $this->executeController($route['controller'], $route['action']);
-            } else {
-                echo 'route not found';
+                $routeNotExists = false;
             }
-
         }
+
+        if ($routeNotExists) {
+            echo 'Route not found';
+        }
+
     }
 
     private function executeController(string $controller, string $action)
