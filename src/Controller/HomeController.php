@@ -2,12 +2,15 @@
 
 namespace App\Controller;
 
-use Core\Controller;
+use Core\AbstractController;
 
-class HomeController extends Controller
+class HomeController extends AbstractController
 {
     public function index()
     {
-        echo 'Home Controller';
+        return $this->json([
+            'controller' => 'HomeController',
+            'action' => 'index'
+        ]);
     }
 }
