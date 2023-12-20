@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'app/framework-mvc',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '265b5310d7e44a937d146991bb69e3e81f4c057a',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'app/framework-mvc' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '265b5310d7e44a937d146991bb69e3e81f4c057a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
