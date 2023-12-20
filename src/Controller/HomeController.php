@@ -8,6 +8,7 @@ class HomeController extends AbstractController
 {
     public function index()
     {
+        
         return $this->json([
             'controller' => 'HomeController',
             'action' => 'index'
