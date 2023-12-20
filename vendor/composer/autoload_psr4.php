@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Core\\HttpFoundation\\' => array($baseDir . '/core/http-foundation'),
     'Core\\' => array($baseDir . '/core'),
     'Config\\' => array($baseDir . '/config'),
     'App\\' => array($baseDir . '/src'),

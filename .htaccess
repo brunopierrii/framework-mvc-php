@@ -3,4 +3,4 @@ RewriteBase /
 
 RewriteCond %{THE_REQUEST} public/([^\s?]*) [NC]
 RewriteRule ^ %1 [L,NE,R=302]
-RewriteRule ^((?!public/).*)$ framework-mvc/public/$1 [L,NC]
+RewriteRule ^((?!public/).*)$ framework-mvc-php/public/$1 [L,NC]
