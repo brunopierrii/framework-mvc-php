@@ -11,6 +11,7 @@
         "psr-4": {
             "App\\": "src/",
             "Core\\": "core/",
+            "Core\\HttpFoundation\\": "core/http-foundation",
             "Config\\": "config/"
         }
     }
