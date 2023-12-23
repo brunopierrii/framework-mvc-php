@@ -10,11 +10,14 @@ class Response
 
     protected $headers;
 
-    public function __construct(?string $content = '', int $status = 200, array $headers = [])
+    protected $isJson;
+
+    public function __construct(?string $content = '', int $status = 200, array $headers = [], bool $isJson = false)
     {
         $this->setContent($content);
         $this->setStatusCode($status);
         $this->setHeaders($headers);
+        $this->setIsJson($isJson);
 
         !empty($headers) ?: $this->sendHeaders();
     }
@@ -22,18 +25,18 @@ class Response
     protected function setContent(string $content = '')
     {
         $this->content = $content;
+        
+        if ($this->getIsJson()) {
+            return $this;
+            
+        }
 
-        return $this;
+        return $this->sendContent();
     }
 
     protected function getContent()
     {
         return $this->content;
-    }
-
-    protected function getStatusCode()
-    {
-        return $this->statusCode;
     }
 
     protected function setStatusCode(int $statusCode)
@@ -43,14 +46,31 @@ class Response
         return $this;
     }
 
-    public function getHeaders()
+    protected function getStatusCode()
     {
-        return $this->headers;
+        return $this->statusCode;
     }
 
     public function setHeaders(array $headers)
     {
         $this->headers = $headers;
+
+        return $this;
+    }
+
+    public function getHeaders()
+    {
+        return $this->headers;
+    }
+
+    public function getIsJson()
+    {
+        return $this->isJson;
+    }
+    
+    public function setIsJson($isJson)
+    {
+        $this->isJson = $isJson;
 
         return $this;
     }
@@ -80,7 +100,4 @@ class Response
 
         return $this;
     }
-
-
-    
 }
