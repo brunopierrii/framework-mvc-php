@@ -1,6 +1,7 @@
 <?php
 
 namespace Core;
+use App\Controller\HomeController;
 
 abstract class RouterCore
 {
@@ -118,7 +119,7 @@ abstract class RouterCore
             return;
         }
         
-        $object = new $class;
+        $object = new $class();
         $object->$action();
     }
 

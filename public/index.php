@@ -1,10 +1,12 @@
 <?php
-require_once dirname(__DIR__).'/vendor/autoload.php';
-require_once dirname(__DIR__).'/config/config.php';
-require_once dirname(__DIR__).'/resources/functions/dump.php';
 
-use Config\Router;
+/**
+ * Autoloader of composer
+ */
+require __DIR__.'/../vendor/autoload.php';
 
-(new Router());
+require_once __DIR__.'/../bootstrap/app.php';
+
+
 
 

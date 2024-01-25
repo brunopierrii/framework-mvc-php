@@ -1,12 +1,14 @@
 {
-    "name": "app/framework-mvc",
+    "name": "devhost-tech/future-mvc",
     "authors": [
         {
             "name": "Bruno Pierri",
             "email": "pierri95@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    },
     "autoload": {
         "psr-4": {
             "App\\": "src/",
