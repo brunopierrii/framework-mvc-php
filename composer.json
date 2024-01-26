@@ -2,7 +2,7 @@
     "name": "devhost-tech/future-mvc",
     "description": "Framework MVC",
     "type": "project",
-    "license": "copyright",
+    "license": "MIT",
     "authors": [
         {
             "name": "Bruno Pierri",
