@@ -6,13 +6,12 @@ class JsonResponse extends Response
 {
     protected $data;
 
-    public function __construct(mixed $data = null, int $status = 200, array $headers = [], bool $json = false)
+    public function __construct(mixed $data = null, int $status = 200, array $headers = [])
     {
-        parent::__construct('', $status, $headers);
+        parent::__construct('', $status, $headers, isJson: true);
 
         $data ??= new \ArrayObject();
-
-        $this->setStatusCode($status);
+        
         $this->setData($data);
     }
 
@@ -26,12 +25,18 @@ class JsonResponse extends Response
     public function setData(mixed $data = [])
     {
         try {
+
+            if (!is_array($data)) {
+                throw new \Exception('expected an array type');
+            }
+
             $data = json_encode($data);
+
+            return $this->setJson($data);
+            
         } catch (\Exception $e) {
             echo $e->getMessage();
         }
-
-        return $this->setJson($data);
     }
 
     public function update()
