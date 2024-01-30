@@ -10,16 +10,14 @@ require_once __DIR__.'/../config/config.php';
  * resources
  */
 require_once __DIR__.'/../resources/functions/dump.php';
-require_once __DIR__.'/../resources/helpers.php';
 
-// $getenv = Dotenv\Dotenv::createImmutable('../');
-// $getenv->load();
-
-// dd(env('teste'));
+Dotenv\Dotenv::createImmutable('../')->load();
 
 /**
  * ServicesPorviders
  */
+
+new App\Providers\DatabaseServiceProvider();
 
 /**
  * System Routes
